@@ -47,7 +47,16 @@ function App() {
   }, [correctLetters, wrongLetters, playable])
 
 
+  function playAgain(){
+    setPlayable(true);
+    //Empty Arrays
+    setCorrectLetters([]);
+    setWrongLetters([]);
 
+
+    const random = Math.floor(Math.random() * words.length);
+    selectedWord = words[random]
+  }
 
 
   return (
@@ -63,7 +72,8 @@ function App() {
       <Popup correctLetters={correctLetters}
       wrongLetters={wrongLetters}
       selectedWord={selectedWord}
-      setPlayable={setPlayable}/>
+      setPlayable={setPlayable}
+      playAgain={playAgain}/>
       <Notification showNotification={showNotification} />
     </>
   );
