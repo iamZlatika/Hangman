@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Word = ({ selectedWord, correctLetters }) => {
+  
   return (
     <div className="word" id="word">
 
